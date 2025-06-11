@@ -25,13 +25,13 @@ from qgis.core import (
 from PyQt5.QtCore import QVariant
 import math
 
-# 🧭 Nombre de la capa de puntos sobre la que vas a crear el buffer
+#  Nombre de la capa de puntos sobre la que vas a crear el buffer
 nombre_capa_puntos = "nombre de capa de puntos"
 
-# 🔲 Lado del cuadrado (en unidades del CRS, por ejemplo, metros si el CRS es proyectado)
+#  Lado del cuadrado (en unidades del CRS, por ejemplo, metros si el CRS es proyectado)
 lado = math.sqrt(199.9480)  # Aproximadamente 14.14 m para un área de 199.9480 m²
 
-# 🔍 Buscar la capa en el proyecto actual
+#  Buscar la capa en el proyecto actual
 capa_puntos = QgsProject.instance().mapLayersByName(nombre_capa_puntos)
 
 if not capa_puntos:
@@ -39,16 +39,16 @@ if not capa_puntos:
 else:
     capa_puntos = capa_puntos[0]  # Selecciona la primera coincidencia
 
-    # 📐 Crear una nueva capa vectorial de polígonos en memoria, con el mismo CRS
+    #  Crear una nueva capa vectorial de polígonos en memoria, con el mismo CRS
     uri = "Polygon?crs=" + capa_puntos.crs().authid()
     capa_poligonos = QgsVectorLayer(uri, "cuadrados_buffer", "memory")
     prov = capa_poligonos.dataProvider()
 
-    # ➕ Agregar campo ID a la capa de salida
+    #  Agregar campo ID a la capa de salida
     prov.addAttributes([QgsField("ID", QVariant.Int)])
     capa_poligonos.updateFields()
 
-    # 🧱 Crear un cuadrado centrado en cada punto
+    #  Crear un cuadrado centrado en cada punto
     nueva_entidad_id = 1
     for feature in capa_puntos.getFeatures():
         x, y = feature.geometry().asPoint().x(), feature.geometry().asPoint().y()
@@ -69,8 +69,8 @@ else:
         prov.addFeatures([nueva_feature])
         nueva_entidad_id += 1
 
-    # ♻️ Actualizar la capa y añadirla al proyecto
+    #  Actualizar la capa y añadirla al proyecto
     capa_poligonos.updateExtents()
     QgsProject.instance().addMapLayer(capa_poligonos)
 
-    print(f"✅ Se generaron {nueva_entidad_id - 1} polígonos cuadrados como buffer.")
+    print(f" Se generaron {nueva_entidad_id - 1} polígonos cuadrados como buffer.")
