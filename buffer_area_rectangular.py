@@ -24,14 +24,14 @@ from qgis.core import (
 )
 from PyQt5.QtCore import QVariant
 
-# 🧭 Nombre de la capa de puntos sobre la que se crea el buffer
+#  Nombre de la capa de puntos sobre la que se crea el buffer
 nombre_capa_puntos = "nombre de la capa"
 
-# 📐 Dimensiones del rectángulo (en unidades del CRS, p. ej., metros)
+#  Dimensiones del rectángulo (en unidades del CRS, p. ej., metros)
 ancho = 4       # Ej. 4 metros de ancho
 alto = 2.5      # Ej. 2.5 metros de alto
 
-# 🔍 Buscar la capa de puntos en el proyecto
+#  Buscar la capa de puntos en el proyecto
 capa_puntos = QgsProject.instance().mapLayersByName(nombre_capa_puntos)
 
 if not capa_puntos:
@@ -39,16 +39,16 @@ if not capa_puntos:
 else:
     capa_puntos = capa_puntos[0]
 
-    # 🧱 Crear una nueva capa de polígonos en memoria con el mismo CRS
+    #  Crear una nueva capa de polígonos en memoria con el mismo CRS
     uri = "Polygon?crs=" + capa_puntos.crs().authid()
     capa_poligonos = QgsVectorLayer(uri, "rectangulos_buffer", "memory")
     prov = capa_poligonos.dataProvider()
 
-    # ➕ Agregar un campo ID a la capa de salida
+    #  Agregar un campo ID a la capa de salida
     prov.addAttributes([QgsField("ID", QVariant.Int)])
     capa_poligonos.updateFields()
 
-    # 🔲 Crear rectángulos centrados en cada punto de entrada
+    #  Crear rectángulos centrados en cada punto de entrada
     nueva_entidad_id = 1
     for feature in capa_puntos.getFeatures():
         x, y = feature.geometry().asPoint().x(), feature.geometry().asPoint().y()
@@ -69,8 +69,8 @@ else:
         prov.addFeatures([nueva_feature])
         nueva_entidad_id += 1
 
-    # ♻️ Actualizar la capa y agregarla al proyecto
+    #  Actualizar la capa y agregarla al proyecto
     capa_poligonos.updateExtents()
     QgsProject.instance().addMapLayer(capa_poligonos)
 
-    print(f"✅ Se generaron {nueva_entidad_id - 1} rectángulos en la capa 'rectangulos_buffer'.")
+    print(f" Se generaron {nueva_entidad_id - 1} rectángulos en la capa 'rectangulos_buffer'.")
