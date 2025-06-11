@@ -1,6 +1,6 @@
-# PyQGIS-Scripts para automatización de tareas
+Scripts de python para automatizar tareas en QGIS
 
-Este repositorio contiene varios scripts en python para tareas de geoprocesamiento en QGIS y automatización de flujos de trabajo.
+Este repositorio contiene varios scripts de python para tareas de geoprocesamiento en QGIS y automatización de flujos de trabajo.
 
 ## Carpetas y descripción
 
@@ -9,7 +9,7 @@ Este repositorio contiene varios scripts en python para tareas de geoprocesamien
   
 ## Cómo usar
 
-Cada carpeta contiene scripts independientes con ejemplos básicos en los comentarios o documentación inline.
+Cada carpeta contiene scripts con comentarios y documentación inline.
 
 ---
 
