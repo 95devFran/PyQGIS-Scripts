@@ -25,7 +25,7 @@ from qgis.core import (
 from PyQt5.QtCore import QVariant
 import math
 
-# 🧭 Nombre de la capa de puntos a utilizar (modificar según el caso)
+# 🧭 Nombre de la capa de puntos sobre la que vas a crear el buffer
 nombre_capa_puntos = "nombre de capa de puntos"
 
 # 🔲 Lado del cuadrado (en unidades del CRS, por ejemplo, metros si el CRS es proyectado)
@@ -59,7 +59,7 @@ else:
             QgsPointXY(x + lado / 2, y - lado / 2),
             QgsPointXY(x + lado / 2, y + lado / 2),
             QgsPointXY(x - lado / 2, y + lado / 2),
-            QgsPointXY(x - lado / 2, y - lado / 2)  # Cierra el polígono
+            QgsPointXY(x - lado / 2, y - lado / 2)
         ]])
 
         # Crear la nueva entidad poligonal y asignar atributos
