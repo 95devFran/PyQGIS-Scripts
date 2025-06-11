@@ -45,4 +45,4 @@ for capa in capas:
 
     print(f"Capa '{nombre_capa}' exportada a: {nombre_archivo}")
 
-print("✔ Exportación completada.")
+print("Exportación completada.")
