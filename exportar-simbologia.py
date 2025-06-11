@@ -35,6 +35,6 @@ for capa in QgsProject.instance().mapLayers().values():
     # Guardar el estilo de la capa como archivo .qml
     capa.saveNamedStyle(archivo_qml)
 
-    print(f"✅ Estilo de '{nombre}' guardado en: {archivo_qml}")
+    print(f" Estilo de '{nombre}' guardado en: {archivo_qml}")
 
 print("✔ Exportación de estilos completada.")
