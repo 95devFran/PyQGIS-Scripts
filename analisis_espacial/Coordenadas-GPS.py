@@ -22,17 +22,17 @@ from PyQt5.QtCore import QVariant
 from qgis.utils import iface
 
 # Configuración de campos
-campo_dd_y = "dd_y"    # Latitud en decimal
-campo_dd_x = "dd_x"    # Longitud en decimal
-campo_lat_dms = "latit"
-campo_lon_dms = "longi"
+campo_dd_y = "campo de Y"    # Latitud en decimal
+campo_dd_x = "campo de X"    # Longitud en decimal
+campo_lat_dms = "campo de latitud"
+campo_lon_dms = "campo de longitud"
 
 # Obtener capa activa
 layer = iface.activeLayer()
 
 # Verificar si existe
 if not layer or not layer.isValid():
-    raise Exception("❌ No hay ninguna capa activa válida.")
+    raise Exception(" No hay ninguna capa activa válida.")
 
 # Añadir campos si no existen
 field_names = [f.name() for f in layer.fields()]
