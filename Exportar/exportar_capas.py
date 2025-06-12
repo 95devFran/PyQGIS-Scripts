@@ -15,7 +15,7 @@ Script para exportar automáticamente todas las capas cargadas en QGIS a archivo
     - QGIS 3.x
     - Plugin 'Processing' habilitado
 
-Autor: 95sFran (GitHub: https://github.com/95sFran)
+Autor: 95devFran (GitHub: https://github.com/95devFran)
 """
 
 import os
