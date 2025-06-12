@@ -2,7 +2,6 @@
 Editor de campos en capas de QGIS mediante interfaz gráfica.
 
 Este script abre una ventana en QGIS donde puedes:
-
 1. Seleccionar una capa cargada en el proyecto.
 2. Cargar y seleccionar uno de sus campos existentes para editar.
 3. Introducir un valor que se asignará a todas las entidades de la capa en ese campo.
@@ -11,14 +10,14 @@ Este script abre una ventana en QGIS donde puedes:
 
 El proceso es:
 - Seleccionas la capa.
-- Pulsas "Cargar campos" para listar los campos de la capa.
-- Seleccionas un campo a modificar.
-- Escribes el valor que deseas asignar.
-- Pulsas "Aplicar valor a todas las entidades".
+- Presiona "Cargar campos" para listar los campos de la capa.
+- Selecciona un campo a modificar.
+- Escribe el valor que deseas asignar.
+- Presiona en "Aplicar valor a todas las entidades".
 - El campo se actualiza con ese valor para todas las entidades.
 - Puedes repetir la operación para otros campos o valores sin cerrar la ventana.
 
-Esta herramienta facilita la edición rápida y masiva de campos en capas vectoriales dentro de QGIS.
+Esta herramienta facilita la edición rápida de varios campos en capas vectoriales dentro de QGIS.
 """
 
 from qgis.core import (
