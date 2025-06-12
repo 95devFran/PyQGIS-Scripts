@@ -33,7 +33,7 @@ capa_origen = QgsProject.instance().mapLayersByName(nombre_capa_origen)
 capa_destino = QgsProject.instance().mapLayersByName(nombre_capa_destino)
 
 if not capa_origen or not capa_destino:
-    print("❌ No se encontraron una o ambas capas. Verifica los nombres.")
+    print("No se encontraron una o ambas capas. Verifica los nombres.")
     raise ValueError("Capas no encontradas.")
 
 capa_origen = capa_origen[0]
@@ -41,7 +41,7 @@ capa_destino = capa_destino[0]
 
 # Verificación de validez
 if not capa_origen.isValid() or not capa_destino.isValid():
-    print("❌ Una o ambas capas no son válidas.")
+    print(" Una o ambas capas no son válidas.")
 else:
     # Añadir campo si no existe
     if campo_distancia not in capa_origen.fields().names():
