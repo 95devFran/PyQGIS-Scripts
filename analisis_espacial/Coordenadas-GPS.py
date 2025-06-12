@@ -13,8 +13,7 @@ Requisitos:
 - Ejecutar dentro del entorno de QGIS.
 - La capa activa debe tener los campos 'dd_x' y 'dd_y'.
 
-Autor: 95sFran
-Repositorio: https://github.com/95sFran/PyQGIS-Scripts
+Autor: 95devFran
 """
 
 from qgis.core import QgsField, edit
