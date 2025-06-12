@@ -15,7 +15,7 @@ Script para exportar automáticamente los estilos (.qml) de todas las capas de u
     - QGIS 3.x
     - Capas con simbología definida
 
-Autor: Fran (GitHub: https://github.com/95sFran)
+Autor: 95devFran (GitHub: https://github.com/95devFran)
 """
 
 import os
