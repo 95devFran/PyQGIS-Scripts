@@ -13,8 +13,7 @@ Requisitos:
 - Ejecutar dentro del entorno de QGIS (PyQGIS).
 - La capa debe estar previamente cargada en el proyecto.
 
-Autor: 95sFran
-Repositorio: https://github.com/95sFran/PyQGIS-Scripts
+Autor: 95devFran 
 """
 
 import os
