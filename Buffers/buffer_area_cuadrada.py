@@ -16,7 +16,7 @@
     - QGIS 3.x
     - Capa de entrada con geometría de tipo Punto
 
-Autor: Fran (https://github.com/95sFran)
+Autor: 95devFran (https://github.com/95devFran)
 """
 
 from qgis.core import (
