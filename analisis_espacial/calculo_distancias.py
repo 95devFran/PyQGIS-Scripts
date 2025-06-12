@@ -15,7 +15,7 @@ Uso:
 Requisitos:
 - Ejecutar desde el entorno de QGIS 
 
-Autor: 95devFra
+Autor: 95devFran
 """
 
 from qgis.core import QgsProject, QgsField, edit
