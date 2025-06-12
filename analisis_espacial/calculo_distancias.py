@@ -15,8 +15,7 @@ Uso:
 Requisitos:
 - Ejecutar desde el entorno de QGIS 
 
-Autor: 95sFran
-Repositorio: https://github.com/95sFran/PyQGIS-Scripts
+Autor: 95devFra
 """
 
 from qgis.core import QgsProject, QgsField, edit
