@@ -35,7 +35,7 @@ lado = math.sqrt(199.9480)  # Aproximadamente 14.14 m para un área de 199.9480 
 capa_puntos = QgsProject.instance().mapLayersByName(nombre_capa_puntos)
 
 if not capa_puntos:
-    print(f"❌ No se encontró ninguna capa llamada '{nombre_capa_puntos}'. Verifica el nombre.")
+    print(f"No se encontró ninguna capa llamada '{nombre_capa_puntos}'. Verifica el nombre.")
 else:
     capa_puntos = capa_puntos[0]  # Selecciona la primera coincidencia
 
